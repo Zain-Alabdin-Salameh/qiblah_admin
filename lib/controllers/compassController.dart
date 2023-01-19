@@ -20,16 +20,6 @@ class CompassController extends GetxController {
   LocationData _locationData = LocationData.fromMap({});
 
   CompassController() {
-    // _compassDirectionSubscription =
-    //     _compassService.compassDirectionStream?.listen((event) {
-    //   compassDirection = event;
-    //   notifyListeners();
-    // });
-    // _compassHeadingSubscription =
-    //     _compassService.compassHeadingStream?.listen((event) {
-    //   compassHeading = event;
-    //   notifyListeners();
-    // });
     initLocation();
   }
   void initLocation() async {
