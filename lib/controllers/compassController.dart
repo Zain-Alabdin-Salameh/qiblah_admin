@@ -65,8 +65,6 @@ class CompassController extends GetxController {
 
   @override
   void dispose() {
-    // _compassHeadingSubscription?.cancel();
-    // _compassDirectionSubscription?.cancel();
     _compassSubscription?.cancel();
     super.dispose();
   }
