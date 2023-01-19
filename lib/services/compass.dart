@@ -72,7 +72,7 @@ class CompassService {
       if ((lo_rad > de_lo || lo_rad < radians(-180.0) + de_lo) &&
           toDegrees > 0.0 &&
           toDegrees <= 90.0) {
-        toDegrees += 180.0;
+        toDegrees -= 180.0;
       } else if (lo_rad <= de_lo &&
           lo_rad >= radians(-180.0) + de_lo &&
           toDegrees > -90.0 &&
@@ -84,7 +84,7 @@ class CompassService {
       if ((lo_rad > de_lo || lo_rad < radians(-180.0) + de_lo) &&
           toDegrees > 0.0 &&
           toDegrees < 90.0) {
-        toDegrees += 180.0;
+        toDegrees -= 180.0;
       }
       if (lo_rad <= de_lo &&
           lo_rad >= radians(-180.0) + de_lo &&

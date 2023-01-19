@@ -25,6 +25,15 @@ class HomePage extends GetView {
                 alignment: Alignment.center,
                 children: [
                   // Background
+                  Positioned(
+                      top: 50,
+                      child: Container(
+                        decoration: BoxDecoration(
+                            color: controller.pointerColor,
+                            borderRadius: BorderRadius.circular(50)),
+                        height: 20,
+                        width: 20,
+                      )),
                   Image.asset(
                     'assets/images/bg.png',
                     height: _screenHeight,

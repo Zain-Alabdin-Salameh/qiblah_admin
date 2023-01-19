@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:flutter/material.dart';
 import 'package:flutter_compass/flutter_compass.dart';
 import 'package:get/get.dart';
 import 'package:location/location.dart';
@@ -13,7 +14,7 @@ class CompassController extends GetxController {
   double? jurOffset;
   String? compassDirection;
   Location location = new Location();
-
+  Color pointerColor = Colors.transparent;
   bool _serviceEnabled = false;
   PermissionStatus _permissionGranted = PermissionStatus.denied;
   LocationData _locationData = LocationData.fromMap({});
@@ -59,7 +60,16 @@ class CompassController extends GetxController {
           39.826206);
       jurOffset = _compassService!.getOffsetFromNorth(_locationData.latitude!,
           _locationData.longitude!, 31.771959, 35.217018);
+
+      if (compassDirection == "Qiblah") {
+        pointerColor = Colors.green;
+      } else if (compassDirection == "Jerusalem") {
+        pointerColor = Colors.blue;
+      } else {
+        pointerColor = Colors.transparent;
+      }
       update();
+      print(jurOffset);
     });
   }
 
